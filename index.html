@@ -9,13 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      --primary: #0353a4;
-      --primary-light: #168aad;
-      --secondary: #10B981;
-      --dark: #34a0a4;
-      --darker: #161a1d;
-      --light: #F8FAFC;
-      --accent: #F472B6;
+      /* Premium Dark Aesthetic Color Palette */
+      --primary: #6366f1; /* Neon Indigo */
+      --primary-light: #818cf8; /* Light Indigo */
+      --secondary: #2dd4bf; /* Teal */
+      --dark: #0f172a; /* Slate 900 (Deep Dark) */
+      --darker: #020617; /* Slate 950 (Almost Black) */
+      --light: #f8fafc; /* Slate 50 (Crisp White) */
+      --accent: #f472b6; /* Pink accent */
     }
     
     * {
@@ -47,14 +48,14 @@
       width: 100%;
       z-index: 1000;
       padding: 1rem 0;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(8px);
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(12px);
       transition: all 0.3s ease;
     }
     
     .navbar.scrolled {
       padding: 0.5rem 0;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
     }
     
     .nav-container {
@@ -132,7 +133,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(45deg, var(--darker) 0%, rgba(79, 70, 229, 0.2) 100%);
+      background: linear-gradient(45deg, var(--darker) 0%, rgba(99, 102, 241, 0.15) 100%);
       z-index: -1;
     }
     
@@ -177,7 +178,7 @@
       border-radius: 50%;
       overflow: hidden;
       border: 5px solid var(--primary);
-      box-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
     }
     
     .circular-image img {
@@ -188,15 +189,16 @@
     
     .tech-bubble {
       position: absolute;
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(5px);
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
       animation: float 5s ease-in-out infinite;
       font-size: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
     
     .tech-bubble:nth-child(1) { width: 70px; height: 70px; top: 10%; left: 0; animation-delay: 0.5s; }
@@ -215,13 +217,13 @@
       transition: all 0.3s ease;
       border: none;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+      box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
     }
     
     .btn:hover {
       background: var(--primary-light);
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(79, 70, 229, 0.6);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
     }
     
     .btn-secondary {
@@ -229,6 +231,7 @@
       color: var(--light);
       border: 2px solid var(--primary);
       margin-left: 1rem;
+      box-shadow: none;
     }
     
     .btn-secondary:hover { background: var(--primary); color: white; }
@@ -248,52 +251,53 @@
     }
     
     .service-card {
-      background: rgba(30, 41, 59, 0.6);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
       border-radius: 20px;
       padding: 2rem;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.03);
       height: 100%;
       display: flex;
       flex-direction: column;
     }
     
-    .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); border-color: rgba(79, 70, 229, 0.3); }
+    .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); border-color: rgba(99, 102, 241, 0.3); }
     .service-icon { font-size: 3rem; margin-bottom: 1rem; color: var(--primary); transition: all 0.3s ease; }
     .service-card:hover .service-icon { transform: scale(1.1); color: var(--primary-light); }
     .service-title { font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; }
     .service-desc { color: #94A3B8; flex-grow: 1; }
 
     /* Skills Section */
-    .skills { background: linear-gradient(45deg, var(--darker), #1e1e3f); }
+    .skills { background: linear-gradient(45deg, var(--darker), var(--dark)); }
     .skills-container { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
     .skill-content h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
     .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .skill-item { display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .skill-icon { width: 80px; height: 80px; background: rgba(30, 41, 59, 0.6); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 2rem; color: var(--primary); transition: all 0.3s ease; }
+    .skill-icon { width: 80px; height: 80px; background: rgba(15, 23, 42, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 2rem; color: var(--primary); transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); }
     .skill-name { font-weight: 600; margin-bottom: 0.3rem; }
-    .skill-level { width: 80%; height: 6px; background: rgba(255, 255, 255, 0.1); border-radius: 10px; position: relative; }
-    .skill-progress { position: absolute; top: 0; left: 0; height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
+    .skill-level { width: 80%; height: 6px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; position: relative; }
+    .skill-progress { position: absolute; top: 0; left: 0; height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
     
     /* Projects Section */
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-    .project-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(10px); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.05); height: 100%; }
-    .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); }
+    .project-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border-radius: 15px; overflow: hidden; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.03); height: 100%; }
+    .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); border-color: rgba(99, 102, 241, 0.3); }
     .project-image { height: 200px; overflow: hidden; position: relative; }
     .project-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-    .project-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent); display: flex; align-items: flex-end; padding: 1.5rem; opacity: 0; transition: 0.3s; }
+    .project-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(2, 6, 23, 0.95), transparent); display: flex; align-items: flex-end; padding: 1.5rem; opacity: 0; transition: 0.3s; }
     .project-card:hover .project-overlay { opacity: 1; }
     .project-links { display: flex; gap: 1rem; }
     .project-link { width: 40px; height: 40px; background: white; color: var(--darker); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+    .project-link:hover { background: var(--primary); color: white; }
     .project-content { padding: 1.5rem; }
-    .project-tag { display: inline-block; padding: 0.3rem 0.8rem; background: rgba(79, 70, 229, 0.1); color: var(--primary-light); border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; }
+    .project-tag { display: inline-block; padding: 0.3rem 0.8rem; background: rgba(99, 102, 241, 0.15); color: var(--primary-light); border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; border: 1px solid rgba(99, 102, 241, 0.2); }
     .project-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
     .project-desc { color: #94A3B8; font-size: 0.9rem; }
     
     /* Testimonials */
-    .testimonials { background: linear-gradient(45deg, #1a1a3c, var(--darker)); position: relative; overflow: hidden; }
-    .testimonial-card { background: rgba(30, 41, 59, 0.6); backdrop-filter: blur(10px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255, 255, 255, 0.05); max-width: 700px; margin: 0 auto; }
+    .testimonials { background: linear-gradient(45deg, var(--dark), var(--darker)); position: relative; overflow: hidden; }
+    .testimonial-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border-radius: 20px; padding: 2rem; text-align: center; border: 1px solid rgba(255, 255, 255, 0.03); max-width: 700px; margin: 0 auto; }
     .testimonial-quote { font-size: 1.2rem; font-style: italic; color: #CBD5E1; margin-bottom: 2rem; position: relative; }
     .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 1rem; }
     .author-image { width: 60px; height: 60px; border-radius: 50%; overflow: hidden; border: 3px solid var(--primary); }
@@ -303,12 +307,13 @@
     .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .contact-info h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
     .contact-details { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
-    .contact-icon { width: 50px; height: 50px; background: rgba(79, 70, 229, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+    .contact-icon { width: 50px; height: 50px; background: rgba(99, 102, 241, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); }
     .social-links { display: flex; gap: 1rem; }
-    .social-link { width: 45px; height: 45px; background: rgba(30, 41, 59, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); transition: 0.3s; }
-    .social-link:hover { background: var(--primary); transform: translateY(-5px); }
-    .contact-form { background: rgba(30, 41, 59, 0.6); padding: 2.5rem; border-radius: 20px; }
-    .form-control { width: 100%; padding: 0.8rem 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; color: var(--light); margin-bottom: 1.5rem; }
+    .social-link { width: 45px; height: 45px; background: rgba(15, 23, 42, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--light); transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.05); }
+    .social-link:hover { background: var(--primary); transform: translateY(-5px); border-color: var(--primary); }
+    .contact-form { background: rgba(15, 23, 42, 0.7); padding: 2.5rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.03); }
+    .form-control { width: 100%; padding: 0.8rem 1rem; background: rgba(2, 6, 23, 0.8); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 10px; color: var(--light); margin-bottom: 1.5rem; }
+    .form-control:focus { outline: none; border-color: var(--primary); }
     
     /* Footer */
     footer { background: var(--darker); border-top: 1px solid rgba(255, 255, 255, 0.05); padding: 3rem 0 1.5rem; text-align: center; }
@@ -327,12 +332,12 @@
     .reveal.active { opacity: 1; transform: translateY(0); }
     .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--darker); display: flex; justify-content: center; align-items: center; z-index: 9999; }
     .preloader.fade-out { opacity: 0; visibility: hidden; transition: 0.5s; }
-    .loader { width: 60px; height: 60px; border: 5px solid rgba(255, 255, 255, 0.1); border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
+    .loader { width: 60px; height: 60px; border: 5px solid rgba(255, 255, 255, 0.05); border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     .custom-cursor { position: fixed; width: 20px; height: 20px; border-radius: 50%; background: var(--primary); pointer-events: none; transform: translate(-50%, -50%); z-index: 9999; opacity: 0.5; transition: transform 0.1s ease; mix-blend-mode: exclusion; }
 
     @media (max-width: 992px) { .hero-grid, .skills-container, .contact-container { grid-template-columns: 1fr; } .hero-image { order: -1; } .skill-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column; background: rgba(15, 23, 42, 0.95); text-align: center; } .nav-links.active { display: flex; } .menu-btn { display: block; } .hero-content h1 { font-size: 2rem; } }
+    @media (max-width: 768px) { .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; flex-direction: column; background: rgba(2, 6, 23, 0.95); text-align: center; } .nav-links.active { display: flex; } .menu-btn { display: block; } .hero-content h1 { font-size: 2rem; } }
   </style>
 </head>
 <body>
@@ -392,59 +397,139 @@
     </div>
   </section>
   
-  <section id="skills" class="section skills">
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">Skills & Expertise <span>✨</span></h2></div>
-      <div class="skills-container">
-        <div class="skill-content reveal">
-          <h2>Technical Proficiency</h2>
-          <div class="skill-grid">
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-react"></i></div><h4 class="skill-name">React</h4><div class="skill-level"><div class="skill-progress" style="width: 95%;"></div></div></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-node-js"></i></div><h4 class="skill-name">Node.js</h4><div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-laravel"></i></div><h4 class="skill-name">Laravel</h4><div class="skill-level"><div class="skill-progress" style="width: 85%;"></div></div></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-flutter"></i></div><h4 class="skill-name">Flutter</h4><div class="skill-level"><div class="skill-progress" style="width: 80%;"></div></div></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fas fa-database"></i></div><h4 class="skill-name">MySQL</h4><div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div></div>
-            <div class="skill-item"><div class="skill-icon"><i class="fab fa-js"></i></div><h4 class="skill-name">JavaScript</h4><div class="skill-level"><div class="skill-progress" style="width: 95%;"></div></div></div>
-          </div>
+ <section id="skills" class="section skills">
+  <div class="container">
+    <div class="section-header"><h2 class="section-title">Skills & Expertise <span>✨</span></h2></div>
+    <div class="skills-container">
+      <div class="skill-content reveal">
+        <h2>Technical Proficiency</h2>
+        <div class="skill-grid">
+          <div class="skill-item"><div class="skill-icon"><i class="fab fa-react"></i></div><h4 class="skill-name">React</h4><div class="skill-level"><div class="skill-progress" style="width: 95%;"></div></div></div>
+          <div class="skill-item"><div class="skill-icon"><i class="fas fa-bolt">></i></div><h4 class="skill-name">Next.js</h4><div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div></div>
+          <div class="skill-item"><div class="skill-icon"><i class="fas fa-database"></i></div><h4 class="skill-name">MySQL</h4><div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div></div>
+          <div class="skill-item"><div class="skill-icon"><i class="fab fa-js"></i></div><h4 class="skill-name">JavaScript</h4><div class="skill-level"><div class="skill-progress" style="width: 95%;"></div></div></div>
+          <div class="skill-item"><div class="skill-icon"><i class="fas fa-leaf"></i></div><h4 class="skill-name">MongoDB</h4><div class="skill-level"><div class="skill-progress" style="width: 85%;"></div></div></div>
+          <div class="skill-item"><div class="skill-icon"><i class="fab fa-github"></i></div><h4 class="skill-name">Git/GitHub</h4><div class="skill-level"><div class="skill-progress" style="width: 90%;"></div></div></div>
         </div>
-        <div class="skill-content reveal"><img src="https://cdn3d.iconscout.com/3d/premium/thumb/web-development-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--design-website-programming-seo-pack-illustrations-4674328.png" style="width: 100%; border-radius: 20px;"></div>
       </div>
+      <div class="skill-content reveal"><img src="https://cdn3d.iconscout.com/3d/premium/thumb/web-development-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--design-website-programming-seo-pack-illustrations-4674328.png" style="width: 100%; border-radius: 20px;"></div>
     </div>
-  </section>
+  </div>
+</section>
+
   <section id="projects" class="section">
     <div class="container">
       <div class="section-header"><h2 class="section-title">My Projects <span>📁</span></h2></div>
       <div class="projects-grid">
+        
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Web Application</span><h3 class="project-title">JustPay – Payment Tracking System</h3><p class="project-desc">A comprehensive payment tracking system with analytics and reporting.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/-Lok-Sabha-Election-Predictive-Analytics-using-Python" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/-Lok-Sabha-Election-Predictive-Analytics-using-Python" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Python & ML</span>
+            <h3 class="project-title">Lok Sabha Election Predictive Analytics</h3>
+            <p class="project-desc">Predictive analytics for the 2024 Lok Sabha Election using Python, analyzing voting patterns and building estimation models.</p>
+          </div>
         </div>
+
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Gaming Platform</span><h3 class="project-title">hsclub.in – Game App Platform</h3><p class="project-desc">A gaming platform with social features and leaderboards.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/Deep-Packet-Inspection-System--DPI-System" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/Deep-Packet-Inspection-System--DPI-System" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Cybersecurity</span>
+            <h3 class="project-title">Deep Packet Inspection System (DPI)</h3>
+            <p class="project-desc">Advanced network security project focused on analyzing packet data to identify and filter network traffic based on deep inspection techniques.</p>
+          </div>
         </div>
+
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Admin Panel</span><h3 class="project-title">Admin Dashboard</h3><p class="project-desc">Customizable admin panel with real-time analytics.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/Omni-Dynamic-Saas-E-commerce-" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/Omni-Dynamic-Saas-E-commerce-" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Full Stack SaaS</span>
+            <h3 class="project-title">Omni-Dynamic SaaS E-commerce</h3>
+            <p class="project-desc">A highly dynamic and scalable SaaS engine architecture for e-commerce platforms using Vite and Node.js.</p>
+          </div>
         </div>
+
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Mobile Application</span><h3 class="project-title">Business App 1</h3><p class="project-desc">Cross-platform mobile application for business management.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/Quiz-website" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/Quiz-website" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Web Development</span>
+            <h3 class="project-title">Dynamic Quiz Website</h3>
+            <p class="project-desc">Responsive quiz application integrated with OpenTDB API for automatic question generation and real-time score tracking.</p>
+          </div>
         </div>
+
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Mobile Application</span><h3 class="project-title">Business App 2</h3><p class="project-desc">Cross-platform mobile application with CRM features.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/WanderFind-website" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/WanderFind-website" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">React & API</span>
+            <h3 class="project-title">WanderFind Website</h3>
+            <p class="project-desc">Travel-focused website built to practice React JS and API integrations, helping users find destinations easily.</p>
+          </div>
         </div>
+
         <div class="project-card reveal">
-          <div class="project-image"><img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png"><div class="project-overlay"><div class="project-links"><a href="#" class="project-link"><i class="fas fa-eye"></i></a><a href="#" class="project-link"><i class="fas fa-code"></i></a></div></div></div>
-          <div class="project-content"><span class="project-tag">Mobile Application</span><h3 class="project-title">Business App 3</h3><p class="project-desc">Cross-platform inventory management solution.</p></div>
+          <div class="project-image">
+            <img src="https://publichealthnotes.com/wp-content/uploads/2020/03/project-planning-header@2x.png">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/akashsingh7432/phone-payment-gataways" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/akashsingh7432/phone-payment-gataways" target="_blank" class="project-link"><i class="fas fa-eye"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <span class="project-tag">Next.js & Tailwind</span>
+            <h3 class="project-title">Phone Payment Gateways</h3>
+            <p class="project-desc">A modern Next.js project bootstrapped with Tailwind CSS, focused on mobile payment integration interfaces.</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
 
-  <section id="certifications" class="section" style="background: rgba(15, 23, 42, 0.3);">
+  <section id="certifications" class="section" style="background: rgba(15, 23, 42, 0.4);">
   <div class="container">
     <div class="section-header">
       <h2 class="section-title">Certifications <span>📜</span></h2>
@@ -452,74 +537,71 @@
     </div>
     <div class="services-grid">
       <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid var(--primary);">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-certificate" style="font-size: 2rem; color: var(--primary);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2025</span></div>
-        <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Meta Full Stack Engineer</h3>
-        <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Comprehensive React & Backend development certification.</p>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-certificate" style="font-size: 2rem; color: var(--primary);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+        <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">university of colorado boulder</h3>
+        <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Fundamentals of Network Communication.</p>
         <a href="fundamental.pdf" target="_blank" style="color: var(--primary-light); text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
       <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid var(--secondary);">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-award" style="font-size: 2rem; color: var(--secondary);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-award" style="font-size: 2rem; color: var(--secondary);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2025</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">AWS Cloud Practitioner</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Solutions Architecture Job Simulation & Core Services.</p>
         <a href="aws.pdf" target="_blank" style="color: var(--secondary); text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
       <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid var(--accent);">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fab fa-google" style="font-size: 2rem; color: var(--accent);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fab fa-google" style="font-size: 2rem; color: var(--accent);"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2024</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Google Data Analytics</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Advanced training in data visualization and SQL.</p>
         <a href="google.pdf" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #34a0a4;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-laptop-code" style="font-size: 2rem; color: #34a0a4;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #3b82f6;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-laptop-code" style="font-size: 2rem; color: #3b82f6;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2025</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Deloitte Technology</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Strategic Technology Consulting Job Simulation.</p>
-        <a href="deloitte.pdf" target="_blank" style="color: #34a0a4; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="deloitte.pdf" target="_blank" style="color: #3b82f6; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #f39c12;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-chart-pie" style="font-size: 2rem; color: #f39c12;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #f59e0b;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-chart-pie" style="font-size: 2rem; color: #f59e0b;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2025</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Goldman Sachs Simulation</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Engineering Virtual Experience & Financial Tech.</p>
-        <a href="goldman.pdf" target="_blank" style="color: #f39c12; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="goldman.pdf" target="_blank" style="color: #f59e0b; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #9b59b6;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-shield-alt" style="font-size: 2rem; color: #9b59b6;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #a855f7;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-shield-alt" style="font-size: 2rem; color: #a855f7;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2025</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">JPMorgan Software Eng.</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Agile methodologies and code refinement simulation.</p>
-        <a href="jpmorgan.pdf" target="_blank" style="color: #9b59b6; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="jpmorgan.pdf" target="_blank" style="color: #a855f7; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #2ecc71;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-plane" style="font-size: 2rem; color: #2ecc71;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #10b981;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-plane" style="font-size: 2rem; color: #10b981;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2025</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Skyscanner Front-End</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Web development simulation using modern frameworks.</p>
-        <a href="skyscanner.pdf" target="_blank" style="color: #2ecc71; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="skyscanner.pdf" target="_blank" style="color: #10b981; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #e74c3c;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-network-wired" style="font-size: 2rem; color: #e74c3c;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2024</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #ef4444;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-network-wired" style="font-size: 2rem; color: #ef4444;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2024</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Verizon Networking</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">Cloud Platform and Network Engineering simulation.</p>
-        <a href="verizon.pdf" target="_blank" style="color: #e74c3c; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="verizon.pdf" target="_blank" style="color: #ef4444; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
 
-      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #f1c40f;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-brain" style="font-size: 2rem; color: #f1c40f;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 10px;">2025</span></div>
+      <div class="service-card reveal" style="padding: 1.5rem; border-left: 4px solid #eab308;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;"><i class="fas fa-brain" style="font-size: 2rem; color: #eab308;"></i><span style="font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 10px;">2024</span></div>
         <h3 class="service-title" style="font-size: 1.1rem; margin-bottom: 0.5rem;">Generative AI Expert</h3>
         <p class="service-desc" style="font-size: 0.85rem; margin-bottom: 1rem;">AI apps and LLM prompt engineering tools.</p>
-        <a href="CHATGPT%20copy.pdf" target="_blank" style="color: #f1c40f; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
+        <a href="CHATGPT%20copy.pdf" target="_blank" style="color: #eab308; text-decoration: none; font-size: 0.8rem; font-weight: 600;">View Certificate <i class="fas fa-external-link-alt"></i></a>
       </div>
     </div>
   </div>
 </section>
   
-
-
-
   <section id="testimonials" class="section testimonials">
     <div class="container">
       <div class="section-header"><h2 class="section-title">Client Feedback <span>💬</span></h2></div>
